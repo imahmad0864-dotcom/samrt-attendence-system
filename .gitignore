@@ -1,0 +1,32 @@
+# Secrets (never commit these)
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+npm-debug.log*
+
+# React / Vite build output
+dist/
+
+# Python (face service)
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Student photos and test images
+*.jpg
+*.jpeg
+*.png
+*.webp
