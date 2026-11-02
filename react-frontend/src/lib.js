@@ -3,7 +3,7 @@ import { useRef, useState, useCallback, useEffect } from "react";
 export const S = {
   token: localStorage.sa_token || "",
   user: JSON.parse(localStorage.sa_user || "null"),
-  api: localStorage.sa_api || import.meta.env.VITE_API_URL || "http://localhost:5000/api",,
+  api: localStorage.sa_api || import.meta.env.VITE_API_URL || "http://localhost:5000/api",
 };
 export const pad = (n) => String(n).padStart(2, "0");
 export const dkey = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
