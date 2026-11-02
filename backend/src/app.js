@@ -1,3 +1,4 @@
+import connectDB from "./config/db.js";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -16,6 +17,10 @@ app.use(cors({
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
+
+app.use(async (_req, _res, next) => {
+  try { await connectDB(); next(); } catch (e) { next(e); }
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/students", studentRoutes);
